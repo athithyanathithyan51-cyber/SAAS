@@ -1,29 +1,35 @@
-/* TaskFlow Custom Styles */
-
-/* Smooth scrolling for anchor links */
+/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
 
-/* Body base styles */
+/* Base styles */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: #1f2937;
+    color: #0f172a;
+    background-color: #f8fafc;
 }
 
-/* Navbar shadow on scroll */
+/* Navbar glass effect */
 nav {
-    transition: box-shadow 0.3s ease-in-out;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.7);
+    transition: box-shadow 0.3s ease, background 0.3s ease;
 }
 
-/* Hero section gradient animation */
+nav.scrolled {
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* Gradient animation */
 .bg-gradient-to-br {
-    background-size: 200% 200%;
-    animation: gradientShift 15s ease infinite;
+    background-size: 300% 300%;
+    animation: gradientMove 18s ease infinite;
 }
 
-@keyframes gradientShift {
+@keyframes gradientMove {
     0% {
         background-position: 0% 50%;
     }
@@ -35,129 +41,55 @@ nav {
     }
 }
 
-/* Feature cards hover effect */
+/* Buttons */
+a,
+button {
+    transition: all 0.3s ease;
+}
+
+a:hover,
+button:hover {
+    transform: translateY(-2px);
+}
+
+/* CTA glow */
+.cta-button {
+    box-shadow: 0 15px 45px rgba(99, 102, 241, 0.35);
+}
+
+.cta-button:hover {
+    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.55);
+}
+
+/* Cards */
+.shadow,
 .shadow-lg {
-    transition: all 0.3s ease;
+    border-radius: 1.5rem;
+    background: #ffffff;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
 }
 
+.shadow:hover,
 .shadow-lg:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.12);
 }
 
-/* Button hover effects */
-a, button {
-    transition: all 0.3s ease;
-}
-
-/* Custom container max-width */
-.container {
-    max-width: 1200px;
-}
-
-/* Responsive typography */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-    
-    h2 {
-        font-size: 2rem;
-    }
-    
-    .text-xl {
-        font-size: 1.125rem;
-    }
-}
-
-/* Mobile menu (styled but non-functional without JS) */
-@media (max-width: 768px) {
-    nav .md\:flex {
-        display: none;
-    }
-}
-
-/* Icon animations on hover */
+/* Feature icons */
 .feature-icon {
+    font-size: 2rem;
     transition: transform 0.3s ease;
 }
 
 .feature-card:hover .feature-icon {
-    transform: scale(1.1);
+    transform: scale(1.15) rotate(3deg);
 }
 
-/* CTA section gradient */
-.bg-gradient-to-r {
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-}
-
-/* Footer links hover effect */
-footer a {
-    position: relative;
-}
-
-footer a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: #ffffff;
-    transition: width 0.3s ease;
-}
-
-footer a:hover::after {
-    width: 100%;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f5f9;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #4f46e5;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #4338ca;
-}
-
-/* Number circles in How It Works */
-.step-number {
-    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
-}
-
-/* Pricing card styles (if needed later) */
-.pricing-card {
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-}
-
-.pricing-card:hover {
-    border-color: #4f46e5;
-    transform: scale(1.05);
-}
-
-/* Demo task card animation */
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
+/* Hero demo animation */
 .hero-demo-card > div {
-    animation: slideIn 0.6s ease-out forwards;
+    opacity: 0;
+    animation: slideFade 0.6s ease forwards;
 }
 
 .hero-demo-card > div:nth-child(1) {
@@ -172,92 +104,113 @@ footer a:hover::after {
     animation-delay: 0.6s;
 }
 
-/* Section padding consistency */
-section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+@keyframes slideFade {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Hero section extra spacing */
+/* Sections */
+section {
+    padding: 6rem 0;
+}
+
 .hero-section {
     min-height: 100vh;
     display: flex;
     align-items: center;
 }
 
-/* Feature grid responsive adjustments */
-@media (min-width: 1024px) {
-    .feature-grid {
-        grid-template-columns: repeat(4, 1fr);
+/* Responsive typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
     }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-    .feature-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+/* Footer links */
+footer a {
+    position: relative;
 }
 
-/* Benefit icons pulse effect */
-@keyframes pulse {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.8;
-    }
+footer a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background-color: #6366f1;
+    transition: width 0.3s ease;
 }
 
-.benefit-icon {
-    animation: pulse 2s ease-in-out infinite;
+footer a:hover::after {
+    width: 100%;
 }
 
-/* CTA button glow effect */
-.cta-button {
-    box-shadow: 0 10px 40px rgba(79, 70, 229, 0.4);
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-.cta-button:hover {
-    box-shadow: 0 15px 50px rgba(79, 70, 229, 0.6);
+::-webkit-scrollbar-track {
+    background: #e2e8f0;
 }
 
-/* Responsive image handling */
-img {
-    max-width: 100%;
-    height: auto;
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #6366f1, #22d3ee);
+    border-radius: 8px;
 }
 
-/* Print styles */
-@media print {
-    nav, footer, .cta-section {
-        display: none;
-    }
-    
-    section {
-        page-break-inside: avoid;
-    }
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #4f46e5, #06b6d4);
 }
 
-/* Accessibility improvements */
-a:focus, button:focus {
-    outline: 3px solid #4f46e5;
-    outline-offset: 2px;
+/* Accessibility */
+a:focus,
+button:focus {
+    outline: 3px solid #6366f1;
+    outline-offset: 3px;
 }
 
-/* Loading state (for future enhancement) */
+/* Utility states */
 .loading {
     opacity: 0.6;
     pointer-events: none;
 }
 
-/* Success state (for future enhancement) */
 .success {
+    background-color: #ecfdf5;
     border-color: #10b981;
-    background-color: #d1fae5;
 }
 
-/* Error state (for future enhancement) */
 .error {
+    background-color: #fef2f2;
     border-color: #ef4444;
-    background-color: #fee2e2;
+}
+
+/* Print */
+@media print {
+    nav,
+    footer,
+    .cta-section {
+        display: none;
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
 }

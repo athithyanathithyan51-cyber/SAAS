@@ -1,147 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskFlow - Manage Your Tasks Smarter</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TaskFlow</title>
 
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#0f766e',
-                        secondary: '#059669',
-                        accent: '#06b6d4'
+                        primary: "#6366f1",
+                        secondary: "#22d3ee",
+                        dark: "#0f172a"
                     }
                 }
             }
-        }
+        };
     </script>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="font-sans antialiased bg-slate-50">
+<body class="bg-slate-100 text-slate-800">
 
-<!-- Navbar -->
-<nav class="bg-white shadow-sm fixed w-full top-0 z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <div class="text-2xl font-bold text-primary">TaskFlow</div>
-        <div class="hidden md:flex items-center space-x-8">
-            <a href="#features" class="text-gray-700 hover:text-primary">Features</a>
-            <a href="#how-it-works" class="text-gray-700 hover:text-primary">How It Works</a>
-            <a href="#pricing" class="text-gray-700 hover:text-primary">Pricing</a>
-            <a href="#contact" class="text-gray-700 hover:text-primary">Contact</a>
-            <a href="#" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary">
-                Get Started
-            </a>
-        </div>
-    </div>
-</nav>
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-lg bg-white/70 shadow">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-primary">TaskFlow</h1>
 
-<!-- Hero Section -->
-<section class="pt-32 pb-20 bg-gradient-to-br from-teal-50 via-white to-cyan-50">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-        
-        <div class="md:w-1/2 mb-12">
-            <h1 class="text-5xl font-bold text-gray-900 mb-6">
-                Manage your tasks smarter with 
-                <span class="text-primary">TaskFlow</span>
-            </h1>
-            <p class="text-xl text-gray-600 mb-8">
-                Organize tasks, track progress, and collaborate efficiently — anytime, anywhere.
-            </p>
-            <div class="flex gap-4">
-                <a href="#" class="bg-primary text-white px-8 py-4 rounded-xl text-lg hover:bg-secondary shadow-lg">
-                    Start Free Trial
-                </a>
-                <a href="#" class="border-2 border-primary text-primary px-8 py-4 rounded-xl text-lg hover:bg-teal-50">
-                    View Demo
-                </a>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+                <button class="bg-primary text-white px-6 py-2 rounded-full">
+                    Get Started
+                </button>
             </div>
         </div>
+    </nav>
 
-        <div class="md:w-1/2 bg-white rounded-2xl shadow-2xl p-8">
-            <div class="space-y-4">
-                <div class="flex items-center p-4 bg-teal-50 rounded-lg">
-                    <div class="w-6 h-6 bg-primary rounded-full mr-4"></div>
-                    <div class="flex-1 h-4 bg-teal-200 rounded"></div>
-                </div>
-                <div class="flex items-center p-4 bg-emerald-50 rounded-lg">
-                    <div class="w-6 h-6 bg-secondary rounded-full mr-4"></div>
-                    <div class="flex-1 h-4 bg-emerald-200 rounded"></div>
-                </div>
-                <div class="flex items-center p-4 bg-cyan-50 rounded-lg">
-                    <div class="w-6 h-6 bg-accent rounded-full mr-4"></div>
-                    <div class="flex-1 h-4 bg-cyan-200 rounded"></div>
+    <!-- Hero Section -->
+    <section class="pt-36 pb-24 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 hero-section">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+            <div>
+                <h2 class="text-5xl font-extrabold mb-6">
+                    Stay focused. Get more done with
+                    <span class="text-primary">TaskFlow</span>
+                </h2>
+
+                <p class="text-lg text-slate-600 mb-8">
+                    A modern task manager for productive teams.
+                </p>
+
+                <div class="flex gap-4">
+                    <button class="bg-primary text-white px-8 py-4 rounded-xl cta-button">
+                        Start Free
+                    </button>
+                    <button class="border border-primary text-primary px-8 py-4 rounded-xl">
+                        Live Preview
+                    </button>
                 </div>
             </div>
-        </div>
 
-    </div>
-</section>
-
-<!-- Features -->
-<section id="features" class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12">Powerful Features</h2>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl border">
-                <div class="w-16 h-16 bg-teal-100 rounded-xl flex items-center justify-center mb-6">
-                    <span class="text-primary text-2xl">✓</span>
+            <!-- Demo Card -->
+            <div class="bg-white rounded-3xl shadow-2xl p-6 space-y-4 hero-demo-card">
+                <div class="p-4 bg-indigo-50 rounded-xl flex justify-between">
+                    <span>Design Landing Page</span>
+                    <span>✔</span>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Smart Tasks</h3>
-                <p class="text-gray-600">Organize and prioritize tasks effortlessly.</p>
-            </div>
 
-            <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl border">
-                <div class="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
-                    <span class="text-secondary text-2xl">📊</span>
+                <div class="p-4 bg-cyan-50 rounded-xl flex justify-between">
+                    <span>Team Meeting</span>
+                    <span>⏰</span>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Progress Tracking</h3>
-                <p class="text-gray-600">Visualize productivity and deadlines.</p>
-            </div>
 
-            <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl border">
-                <div class="w-16 h-16 bg-cyan-100 rounded-xl flex items-center justify-center mb-6">
-                    <span class="text-accent text-2xl">👥</span>
+                <div class="p-4 bg-slate-100 rounded-xl flex justify-between">
+                    <span>Deploy Update</span>
+                    <span>⬆</span>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Team Collaboration</h3>
-                <p class="text-gray-600">Work together in real time.</p>
-            </div>
-
-            <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl border">
-                <div class="w-16 h-16 bg-teal-100 rounded-xl flex items-center justify-center mb-6">
-                    <span class="text-primary text-2xl">☁</span>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Cloud Access</h3>
-                <p class="text-gray-600">Access your tasks from anywhere.</p>
             </div>
 
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- CTA -->
-<section class="py-20 bg-gradient-to-r from-teal-600 to-cyan-600 text-center">
-    <h2 class="text-4xl font-bold text-white mb-4">Boost Your Productivity Today</h2>
-    <p class="text-teal-100 mb-8">Start managing tasks smarter with TaskFlow</p>
-    <a href="#" class="bg-white text-primary px-10 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 shadow-lg">
-        Sign Up Free
-    </a>
-</section>
+    <!-- Features -->
+    <section id="features" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
 
-<!-- Footer -->
-<footer class="bg-gray-900 text-gray-400 py-10">
-    <div class="container mx-auto px-6 text-center">
+            <h3 class="text-4xl font-bold text-center mb-16">
+                Why TaskFlow?
+            </h3>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 feature-grid">
+
+                <div class="bg-slate-50 p-8 rounded-2xl shadow feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h4 class="font-bold text-xl mb-2">Smart Planning</h4>
+                    <p>Auto-prioritized tasks.</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl shadow feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h4 class="font-bold text-xl mb-2">Analytics</h4>
+                    <p>Real productivity insights.</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl shadow feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h4 class="font-bold text-xl mb-2">Collaboration</h4>
+                    <p>Work together seamlessly.</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl shadow feature-card">
+                    <div class="feature-icon">☁️</div>
+                    <h4 class="font-bold text-xl mb-2">Cloud Sync</h4>
+                    <p>Access anywhere.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-dark text-center text-white cta-section">
+        <h3 class="text-4xl font-bold mb-4">
+            Boost productivity today
+        </h3>
+        <p class="text-slate-300 mb-10">
+            Join thousands using TaskFlow
+        </p>
+        <button class="bg-primary px-12 py-4 rounded-full">
+            Create Free Account
+        </button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-10 text-center text-slate-400">
         <p class="text-white font-bold text-xl mb-2">TaskFlow</p>
-        <p>&copy; 2024 TaskFlow. All rights reserved.</p>
-    </div>
-</footer>
+        <p>© 2024 TaskFlow</p>
+    </footer>
 
 </body>
 </html>
